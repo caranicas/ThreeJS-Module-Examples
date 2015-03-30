@@ -1,0 +1,22 @@
+{
+  "name": "3JS Boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.0",
+    "threejs": "latest",
+    "physijs": "latest",
+    "goblinphysics":"latest",
+    "orbitcontrols": "https://github.com/caranicas/ThreeJS-Controls.git#orbitcontrols",
+    "effectcomposer": "https://github.com/caranicas/ThreeJS-EffectComposer.git",
+    "dotscreenshader": "https://github.com/caranicas/ThreeJS-Shaders.git#dotscreenshader",
+    "rgbshiftshader": "https://github.com/caranicas/ThreeJS-Shaders.git#rgbshiftshader",
+    "mirrorshader": "https://github.com/caranicas/ThreeJS-Shaders.git#mirrorshader",
+    "digitalglitch": "https://github.com/caranicas/ThreeJS-Shaders.git#digitalglitchshader",
+    "stats": "https://github.com/mrdoob/stats.js.git"
+  },
+  "resolutions": {
+    "threejs": "74e7d09c26"
+  }
+}
