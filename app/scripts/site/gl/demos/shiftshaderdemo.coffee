@@ -33,7 +33,7 @@ class ShiftShaderDemo extends DemoInterface
 
   __initBoxes: ->
     @geometry = new THREE.BoxGeometry( 5, 5, 5 )
-    @material = new THREE.ShaderMaterial( { color: 0xff00ff, shading: THREE.FlatShading } )
+    @material = new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading } )
     @mesh = new THREE.Mesh( @geometry, @material )
     @mesh.position.y = 10
     @mesh.position.x = 5
