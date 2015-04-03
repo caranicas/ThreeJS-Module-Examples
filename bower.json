@@ -15,6 +15,7 @@
     "mirrorshader": "https://github.com/caranicas/ThreeJS-Shaders.git#mirrorshader",
     "digitalglitch": "https://github.com/caranicas/ThreeJS-Shaders.git#digitalglitchshader",
     "colorifyshader": "https://github.com/caranicas/ThreeJS-Shaders.git#colorifyshader",
+    "bleachbypass": "https://github.com/caranicas/ThreeJS-Shaders.git#bleachbypassshader",
     "stats": "https://github.com/mrdoob/stats.js.git"
   },
   "resolutions": {
