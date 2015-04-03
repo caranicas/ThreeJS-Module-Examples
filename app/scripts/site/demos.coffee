@@ -44,6 +44,11 @@ module.exports = Backbone.Model.extend
         'url':'/colorify'
         'name':'colorify'
         'demoClass':require './gl/demos/colorifyShaderDemo.coffee'
+      },
+      {
+        'url':'/bleach'
+        'name':'bleach'
+        'demoClass':require './gl/demos/bleachBypassShaderDemo.coffee'
       }
 
 
