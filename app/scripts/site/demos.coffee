@@ -54,7 +54,18 @@ module.exports = Backbone.Model.extend
         'url':'/horizontalBlur'
         'name':'horizontalBlur'
         'demoClass':require './gl/demos/horizontalBlurShaderDemo.coffee'
+      },
+      {
+        'url':'/verticalBlur'
+        'name':'verticalBlur'
+        'demoClass':require './gl/demos/verticalBlurShaderDemo.coffee'
+      },
+      {
+        'url':'/triangleBlur'
+        'name':'triangleBlur'
+        'demoClass':require './gl/demos/triangleBlurShaderDemo.coffee'
       }
+
 
 
     ]
