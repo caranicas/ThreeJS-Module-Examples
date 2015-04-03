@@ -1,12 +1,12 @@
 THREE = require 'threejs'
 
 EffectComposer = require 'effectcomposer'
-HorizontalBlur = require 'horizontalblur'
+TriangleBlur = require 'triangleblur'
 
 DemoInterface = require './DemoInterface'
 
 
-class HorizontalBlurShaderDemo extends DemoInterface
+class TriangleBlurShaderDemo extends DemoInterface
 
 
   threeInit: ->
@@ -19,19 +19,26 @@ class HorizontalBlurShaderDemo extends DemoInterface
     @composer.addPass( new EffectComposer.prototype.RenderPass( @scene, @camera ) )
 
   __createShaderEffects: ->
-    effect = new EffectComposer.prototype.ShaderPass(new HorizontalBlur())
+    effect = new EffectComposer.prototype.ShaderPass(new TriangleBlur())
     effect.renderToScreen = true;
-    effect.uniforms[ "h" ].value = 0.02
+    effect.uniforms[ "delta" ].value = new THREE.Vector2(0.2,0.01)
     @composer.addPass(effect)
 
   __initGeometry: ->
     super
     @__initBoxes()
+    #__floorGeometry()
 
   __initBoxes: ->
     @geometry = new THREE.BoxGeometry( 5, 5, 5 )
     @material = new THREE.MeshLambertMaterial( { color: 0xff00ff, shading: THREE.FlatShading } )
-    @mesh = new THREE.Mesh( @geometry, @material )
+    floorTexture = new THREE.ImageUtils.loadTexture( 'textures/checkerboard.jpg' )
+    floorTexture.wrapT = THREE.RepeatWrapping
+    floorTexture.wrapS = floorTexture.wrapT
+    floorTexture.repeat.set( 2, 10 )
+    floorMaterial = new THREE.MeshPhongMaterial( { map: floorTexture, side: THREE.DoubleSide, shading: THREE.FlatShading } )
+
+    @mesh = new THREE.Mesh( @geometry, floorMaterial )
     @mesh.position.y = 10
     @mesh.position.x = -5
     @scene.add(@mesh)
@@ -82,4 +89,4 @@ class HorizontalBlurShaderDemo extends DemoInterface
       mesh.rotation.x += 0.01
       mesh.rotation.y += 0.02
 
-module.exports = HorizontalBlurShaderDemo
+module.exports = TriangleBlurShaderDemo

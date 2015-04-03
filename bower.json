@@ -17,6 +17,8 @@
     "colorifyshader": "https://github.com/caranicas/ThreeJS-Shaders.git#colorifyshader",
     "bleachbypass": "https://github.com/caranicas/ThreeJS-Shaders.git#bleachbypassshader",
     "horizontalblur": "https://github.com/caranicas/ThreeJS-Shaders.git#horizontalblurshader",
+    "verticalblur": "https://github.com/caranicas/ThreeJS-Shaders.git#verticalblurshader",
+    "triangleblur": "https://github.com/caranicas/ThreeJS-Shaders.git#triangleblurshader",
     "stats": "https://github.com/mrdoob/stats.js.git"
   },
   "resolutions": {

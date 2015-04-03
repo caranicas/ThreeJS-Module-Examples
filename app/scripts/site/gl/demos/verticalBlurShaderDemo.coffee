@@ -1,12 +1,12 @@
 THREE = require 'threejs'
 
 EffectComposer = require 'effectcomposer'
-HorizontalBlur = require 'horizontalblur'
+VerticalBlur = require 'verticalblur'
 
 DemoInterface = require './DemoInterface'
 
 
-class HorizontalBlurShaderDemo extends DemoInterface
+class VerticalBlurShaderDemo extends DemoInterface
 
 
   threeInit: ->
@@ -19,9 +19,9 @@ class HorizontalBlurShaderDemo extends DemoInterface
     @composer.addPass( new EffectComposer.prototype.RenderPass( @scene, @camera ) )
 
   __createShaderEffects: ->
-    effect = new EffectComposer.prototype.ShaderPass(new HorizontalBlur())
+    effect = new EffectComposer.prototype.ShaderPass(new VerticalBlur())
     effect.renderToScreen = true;
-    effect.uniforms[ "h" ].value = 0.02
+    effect.uniforms[ "v" ].value = 0.05
     @composer.addPass(effect)
 
   __initGeometry: ->
@@ -82,4 +82,4 @@ class HorizontalBlurShaderDemo extends DemoInterface
       mesh.rotation.x += 0.01
       mesh.rotation.y += 0.02
 
-module.exports = HorizontalBlurShaderDemo
+module.exports = VerticalBlurShaderDemo
