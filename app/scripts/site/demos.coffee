@@ -49,6 +49,11 @@ module.exports = Backbone.Model.extend
         'url':'/bleach'
         'name':'bleach'
         'demoClass':require './gl/demos/bleachBypassShaderDemo.coffee'
+      },
+      {
+        'url':'/horizontalBlur'
+        'name':'horizontalBlur'
+        'demoClass':require './gl/demos/horizontalBlurShaderDemo.coffee'
       }
 
 
