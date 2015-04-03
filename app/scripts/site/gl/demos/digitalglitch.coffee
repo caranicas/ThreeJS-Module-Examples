@@ -21,46 +21,10 @@ class DotShaderDemo extends DemoInterface
   __createShaderEffects: ->
     effect = new EffectComposer.prototype.ShaderPass( new DigitalGlitchShader() )
     effect.uniforms[ "amount" ].value = 0.008
-    #effect.uniforms[ "angle" ].value = .02
     effect.uniforms[ "seed" ].value = 1
     effect.uniforms[ "seed_x" ].value = 0.3
     effect.uniforms[ "seed_y" ].value = 1
-    # effect.uniforms[ "distortion_x" ].value = 1
-    # effect.uniforms[ "distortion_y" ].value = 1
-    # effect.uniforms[ "col_s" ].value = 1
-    ###
-    "amount": {
-      type: "f",
-      value: 0.08
-    },
-    "angle": {
-      type: "f",
-      value: 0.02
-    },
-    "seed": {
-      type: "f",
-      value: 0.02
-    },
-    "seed_x": {
-      type: "f",
-      value: 0.02
-    },
-    "seed_y": {
-      type: "f",
-      value: 0.02
-    },
-    "distortion_x": {
-      type: "f",
-      value: 0.5
-    },
-    "distortion_y": {
-      type: "f",
-      value: 0.6
-    },
-    "col_s": {
-      type: "f",
-      value: 0.05
-    ###
+
     effect.renderToScreen = true
     @composer.addPass( effect )
 
@@ -70,7 +34,7 @@ class DotShaderDemo extends DemoInterface
 
   __initBoxes: ->
     @geometry = new THREE.BoxGeometry( 5, 5, 5 )
-    @material = new THREE.ShaderMaterial( { color: 0xff00ff, shading: THREE.FlatShading } )
+    @material = new THREE.MeshLambertMaterial( { color: 0xff00ff, shading: THREE.FlatShading } )
     @mesh = new THREE.Mesh( @geometry, @material )
     @mesh.position.y = 10
     @mesh.position.x = 5
